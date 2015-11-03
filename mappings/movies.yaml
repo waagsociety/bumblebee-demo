@@ -22,6 +22,9 @@
         - viewer
       transformer:
         - merge
+    role:
+      transformer:
+        - literal(reviewer)
 
 - movie:
     id:

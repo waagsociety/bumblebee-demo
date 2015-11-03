@@ -19,12 +19,13 @@
         type: "string"
       profit:
         description: "The profit made"
-        type: "string"
+        type: "number"
     required: 
       - "id"
       - "name"
-      - "type"
+      - "released"
       - "director"
+      - "profit"
     fixed:
       - "id"
 
@@ -71,11 +72,11 @@
       score:
         description: "The score for the movie"
         type: "string"
-      review:
+      text:
         description: "A short text describing the viewer's opinion about the movie"
     required: 
       - "id"
       - "score"
-      - "review"
+      - "text"
     fixed:
       - "id"
