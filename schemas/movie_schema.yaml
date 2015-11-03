@@ -1,0 +1,81 @@
+---
+  movie: 
+    $schema: "http://json-schema.org/draft-04/schema#"
+    title: "Movie"
+    description: "A movie"
+    type: "object"
+    properties: 
+      id:
+        description: "The unique identifier for a movie"
+        type: "string"
+      name: 
+        description: "Name of the movie"
+        type: "string"
+      released: 
+        description: "Release date of the movie"
+        type: "string"
+      director:
+        description: "The name of the director"
+        type: "string"
+      profit:
+        description: "The profit made"
+        type: "string"
+    required: 
+      - "id"
+      - "name"
+      - "type"
+      - "director"
+    fixed:
+      - "id"
+
+  person: 
+    $schema: "http://json-schema.org/draft-04/schema#"
+    title: "Person"
+    description: "A person"
+    type: "object"
+    properties:
+      id: 
+        description: "The unique identifier for a person"
+        type: "string"
+      name:
+        description: "Name of the person"
+        type: "string"
+      role:
+        description: "What a person does"
+        type: "string"
+        enum:
+          - "director"
+          - "reviewer"
+    required: 
+      - "id"
+      - "name"
+      - "role"
+    fixed:
+      - "id"
+
+  review: 
+    $schema: "http://json-schema.org/draft-04/schema#"
+    title: "Review"
+    description: "A review of a movie by a person"
+    type: "object"
+    properties: 
+      id: 
+        description: "The unique identifier for a review"
+        type: "string"
+      reviewer:
+        description: "The id of the reviewer"
+        type: "string"
+      movie:
+        description: "The id of the movie"
+        type: "string"
+      score:
+        description: "The score for the movie"
+        type: "string"
+      review:
+        description: "A short text describing the viewer's opinion about the movie"
+    required: 
+      - "id"
+      - "score"
+      - "review"
+    fixed:
+      - "id"

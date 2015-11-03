@@ -1,0 +1,69 @@
+- director:
+    entityType: 'person'
+    id:
+      transformer:
+        - generate_id
+    name:
+      input:
+        - director
+      transformer:
+        - merge
+    role:
+      transformer:
+        - literal(director)
+
+- reviewer:
+    entityType: 'person'
+    id:
+      transformer:
+        - generate_id
+    name:
+      input:
+        - viewer
+      transformer:
+        - merge
+
+- movie:
+    id:
+      transformer:
+        - generate_id
+    name:
+      input:
+        - name
+      transformer:
+        - merge
+    released:
+      input:
+        - release
+      transformer:
+        - merge
+    director:
+      transformer:
+        - getSiblingProperty(director,id)
+    profit:
+      input:
+        - cost
+        - payout
+      transformer:
+        - subtract(payout,cost)
+
+- review:
+    id: 
+      transformer:
+        - generate_id
+    movie:
+      transformer:
+        - getSiblingProperty(movie,id)
+    reviewer:
+      transformer:
+        - getSiblingProperty(reviewer,id)
+    score:
+      input:
+        - rating
+      transformer:
+        - convertToStars
+    text:
+      input:
+        - review
+      transformer:
+        - merge
