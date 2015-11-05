@@ -6,8 +6,6 @@
     name:
       input:
         - director
-      transformer:
-        - merge
     role:
       transformer:
         - literal(director)
@@ -20,8 +18,6 @@
     name:
       input:
         - viewer
-      transformer:
-        - merge
     role:
       transformer:
         - literal(reviewer)
@@ -33,16 +29,12 @@
     name:
       input:
         - name
-      transformer:
-        - merge
     released:
       input:
         - release
-      transformer:
-        - merge
     director:
       transformer:
-        - getSiblingProperty(director,id)
+        - getSiblingProperty(director.id)
     profit:
       input:
         - cost
@@ -56,10 +48,10 @@
         - generate_id
     movie:
       transformer:
-        - getSiblingProperty(movie,id)
+        - getSiblingProperty(movie.id)
     reviewer:
       transformer:
-        - getSiblingProperty(reviewer,id)
+        - getSiblingProperty(reviewer.id)
     score:
       input:
         - rating
@@ -68,5 +60,3 @@
     text:
       input:
         - review
-      transformer:
-        - merge
