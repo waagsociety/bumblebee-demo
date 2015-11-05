@@ -28,6 +28,8 @@
       - "profit"
     fixed:
       - "id"
+    hidden:
+      - "id"
 
   person: 
     $schema: "http://json-schema.org/draft-04/schema#"
@@ -52,6 +54,8 @@
       - "name"
       - "role"
     fixed:
+      - "id"
+    hidden:
       - "id"
 
   review: 
@@ -79,4 +83,6 @@
       - "score"
       - "text"
     fixed:
+      - "id"
+    hidden:
       - "id"
