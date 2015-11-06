@@ -35,12 +35,20 @@
     director:
       transformer:
         - getSiblingProperty(director.id)
-    profit:
-      input:
-        - cost
-        - payout
-      transformer:
-        - subtract(payout,cost)
+    financial:
+      bb_subProperty: true
+      cost:
+        input:
+          - cost
+      returns:
+        input:
+          - payout
+      profit:
+        input:
+          - cost
+          - payout
+        transformer:
+          - subtract(payout,cost)
 
 - review:
     id: 
