@@ -1,5 +1,5 @@
 - director:
-    entityType: 'person'
+    bb_entityType: 'person'
     id:
       transformer:
         - generate_id
@@ -11,7 +11,7 @@
         - literal(director)
 
 - reviewer:
-    entityType: 'person'
+    bb_entityType: 'person'
     id:
       transformer:
         - generate_id
